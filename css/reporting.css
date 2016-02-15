@@ -1,0 +1,84 @@
+.jttp-reporting-search-crit {
+    padding: 5px 20px 5px 20px;
+    border-top: 1px solid #ccc; 
+}
+
+.jttp-reporting-inline-calendar {
+    display: inline;
+    margin-right: 10px;
+}
+
+.jttp-reporting-summary-module{
+    padding-top: 20px; 
+}
+
+.jttp-reporting-details-tale-container{
+    margin-top: 10px;
+}
+
+.jttp-reporting-table {
+    font-size: 14px;
+    line-height: 1.42857142857143;
+}
+
+.jttp-reporting-summary-export {
+    float:right;
+}
+
+.jttp-reporting-table tbody tr:hover {
+   background-color: #f5f5f5;
+}
+
+.jttp-reporting-summary-export-container {
+    display: table;
+    box-sizing: border-box;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.jttp-reporting-action-button-container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/* Not my classes, all below from Atlassian AUI */
+
+.aui-group {
+    margin-top: 10px;
+}
+
+.module {
+    margin-top: 15px;
+}
+
+.mod-content {
+    margin-top: 10px;
+}
+
+.count-pagination {
+    clear: both;
+    padding-top: 10px;
+    table-layout: auto;
+}
+
+.results-count {
+    font-weight: bold;
+}
+
+.aui-tabs.horizontal-tabs>.tabs-menu>.active-tab>a {
+    font-weight: bold;
+}
+
+.aui-tabs.horizontal-tabs>.tabs-menu>.menu-item>a {   
+    padding: 9px 10px;
+}
+
+.aui-tabs.horizontal-tabs>.tabs-menu>.menu-item:first-child {
+    margin-left: 0px;
+}
+
+.aui-button[disabled], .aui-button[disabled]:active, .aui-button[disabled]:focus, .aui-button[disabled]:hover {
+    cursor: not-allowed;
+}

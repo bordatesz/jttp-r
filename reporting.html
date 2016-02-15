@@ -1,0 +1,498 @@
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <title>AUI - Default Page</title>
+	<link rel="stylesheet" href="aui/css/aui.min.css" media="all">
+    <link rel="stylesheet" href="aui/css/aui-experimental.min.css" media="all">
+    <link rel="stylesheet" href="css/reporting.css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+    <script src="aui/js/aui.min.js"></script>
+    <script src="aui/js/aui-experimental.min.js"></script>
+    <script src="aui/js/aui-soy.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    </head>
+    <body >
+    <div id="page">
+        
+      <!-- This is an imitation of the JIRA header, don't include it in the real code -->  
+      <header id="header" role="banner">
+        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+          <div class="aui-header-inner">
+            <div class="aui-header-primary">
+              <h1 id="logo" class="aui-header-logo aui-header-logo-aui"><a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a></h1>
+              <ul class="aui-nav">
+                <li><a href="http://example.com/">Nav</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- ---- -->  
+        
+        <section id="content" role="main">	  
+        <header class="aui-page-header">
+            <div class="aui-page-header-inner">
+                <div class="aui-page-header-image">
+                    <span class="aui-avatar aui-avatar-large">
+                        <span class="aui-avatar-inner">
+                            <img alt="Everit reporting logo" src="images/E_logo.png">
+                        </span>
+                    </span>
+                </div>
+                <div class="aui-page-header-main">
+                    <h1>Reporting</h1>
+                </div>                
+            </div>
+        </header>
+            
+        <!-- Search criterias -->
+        <div class="jttp-reporting-search-crit">
+            <form action="" class="aui top-label jttp-reporting-reporting-form" id="jttp-reporting-reporting-form" method="get">
+			     <div class="form-body">
+                     <div class="aui-group">
+                        <div class="aui-item search-wrap"> <!-- Search wrap class from issue search -->
+                            <div class="search-container">                                
+                                 <div class="search-criteria-container">
+                                     <div class="search-criteria">
+                                         <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                             <div class="criteria-wrap">
+                                                 <div class="searcherValue">
+                                                     <span id="fieldpid" class="fieldValue">Project:</span> All
+                                                 </div>
+                                             </div>
+                                         </button>
+                                          <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                              <div class="criteria-wrap">
+                                                  <div class="searcherValue">
+                                                      <span id="fieldpid" class="fieldValue">Type:</span> All
+                                                  </div>
+                                              </div>
+                                         </button>
+                                         <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                              <div class="criteria-wrap">
+                                                  <div class="searcherValue">
+                                                      <span id="fieldpid" class="fieldValue">Status:</span> All
+                                                  </div>
+                                              </div>
+                                         </button>
+                                         <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                              <div class="criteria-wrap">
+                                                  <div class="searcherValue">
+                                                      More
+                                                  </div>
+                                              </div>
+                                         </button>
+                                         <button class="aui-button aui-button-link">Filter</button>  <!-- switch to jttp-reporting-search-crit-dynamic-filter -->
+                                     </div>
+                                     <div class="search-criteria-extended">
+                                         <!-- placeholder for criterias with more button !!! -->
+                                         <!-- <div class="extended-button">
+                                             <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                                  <div class="criteria-wrap">
+                                                      <div class="searcherValue">
+                                                          <span id="fieldpid" class="fieldValue">Reporter:</span> All
+                                                      </div>                                                  
+                                                  </div>
+                                             </button>
+                                             <span class="aui-icon aui-icon-small aui-iconfont-remove"></span>
+                                         </div> -->
+                                     </div>
+                                 </div>                                    
+                            </div>
+                            <div class="search-container filter"> <!-- This will be hidden if Basic is picked -->
+                                <div class="search-criteria-container">
+                                    <div class="search-criteria">
+                                        <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                             <div class="criteria-wrap">
+                                                 <div class="searcherValue">
+                                                     <span id="fieldpid" class="fieldValue">Filter:</span> None
+                                                 </div>
+                                             </div>
+                                        </button>
+                                        <button class="aui-button aui-button-link">Basic</button> <!-- switch to jttp-reporting-search-crit-dynamic-normal -->
+                                    </div>
+                                </div>                                    
+                            </div>                            
+                        </div> 
+                    </div>
+                    <div class="aui-group">
+                        <div class="aui-item search-wrap">
+                            <div class="user-search-container">
+                                <div class="search-criteria-container">
+                                    <div class="search-criteria">
+                                        <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                            <div class="criteria-wrap">
+                                                <div class="searcherValue">
+                                                    <span id="fieldpid" class="fieldValue">Groups:</span> All
+                                                </div>
+                                            </div>
+                                        </button>
+                                         <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All" disabled> <!-- only group or user can be picked, not both, one button will be disabled -->
+                                             <div class="criteria-wrap">
+                                                 <div class="searcherValue">
+                                                     <span id="fieldpid" class="fieldValue">Users:</span> All
+                                                 </div>
+                                             </div>
+                                        </button>
+                                    </div>
+                                </div>                                    
+                            </div>
+                        </div>
+                    </div>
+                     <div class="aui-group">
+                        <div class="aui-item search-wrap">
+                            <div class="date-search-container">
+                                <div class="search-criteria-container">
+                                    <div class="search-criteria">
+                                        <div class="from-date jttp-reporting-inline-calendar">
+                                            <input class="text medium-field datepicker-input" placeholder="From" type="text" value="">
+                                                <a href="#" title="Select a date">
+                                                    <span class="aui-icon icon-date">Select a date</span>
+                                                </a>
+                                        </div>
+                                        <div class="to-date jttp-reporting-inline-calendar">
+                                            <input class="text medium-field datepicker-input" placeholder="To" type="text" value="">
+                                                <a href="#" title="Select a date">
+                                                    <span class="aui-icon icon-date">Select a date</span>
+                                                </a>
+                                        </div>
+                                        <button class="aui-button aui-button-primary">Create </button> <!-- Submit the search form -->
+                                    </div>
+                                </div>                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- ---- -->
+            
+        <div class="aui-page-panel">
+          <div class="aui-page-panel-inner">
+            <section class="aui-page-panel-content">                
+                <div id="detailsmodule" class="module toggle-wrap expanded">
+                    <div id="detailsmodule_heading" class="mod-header">
+                        <h2 class="toggle-title">Work Log Details</h2>
+                    </div>
+                    <div class="mod-content">
+                        <div class="aui-group aui-group-split jttp-reporting-action-button-container">
+                            <div class="aui-item">
+                                <button class="aui-button aui-button-subtle aui-dropdown2-trigger" id="details-groupby">Group by</button>                        
+                            </div>
+                            <div class="aui-item">
+                                <button class="aui-button aui-button-subtle aui-dropdown2-trigger" id="details-columns">Columns</button>
+                                <button class="aui-button aui-button-subtle" id="detials-export">
+								    <span class="aui-icon aui-icon-small aui-iconfont-export"></span>
+                                    <span class="button-label">Export</span>
+                                </button>
+							</div>								
+                        </div>
+                        <div class="jttp-reporting-details-tale-container">
+                            <table class="aui jttp-reporting-table">
+                                <thead>
+                                    <tr class="rowHeader">
+                                        <th id="details-project-key">Project</th>
+                                        <th>Type</th>
+                                        <th>Key</th>
+                                        <th>Summary</th>
+                                        <th>Reporter</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>User</th>
+                                        <th>Logged</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td headers="details-project-key">JIRA plugin development</td>
+                                        <td>Bug</td>
+                                        <td>
+                                            <a class="issue-link" data-issue-key="JIRAPLUGIN-194" href="/browse/JIRAPLUGIN-194">JIRAPLUGIN-194</a>
+                                        </td>
+                                        <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
+                                        <td>daniel.toth</td>
+                                        <td>Closed</td>
+                                        <td>03/Feb/16</td>
+                                        <td>Bugfix mindenen</td>
+                                        <td>daniel.toth</td>
+                                        <td>2h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JIRA plugin development</td>
+                                        <td>Bug</td>
+                                        <td>
+                                            <a class="issue-link">JIRAPLUGIN-194</a>
+                                        </td>
+                                        <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
+                                        <td>daniel.toth</td>
+                                        <td>Closed</td>
+                                        <td>03/Feb/16</td>
+                                        <td>Bugfix mindenen</td>
+                                        <td>daniel.toth</td>
+                                        <td>2h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JIRA plugin development</td>
+                                        <td>Bug</td>
+                                        <td>
+                                            <a class="issue-link">JIRAPLUGIN-194</a>
+                                        </td>
+                                        <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
+                                        <td>daniel.toth</td>
+                                        <td>Closed</td>
+                                        <td>03/Feb/16</td>
+                                        <td>Bugfix mindenen</td>
+                                        <td>daniel.toth</td>
+                                        <td>2h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JIRA plugin development</td>
+                                        <td>Bug</td>
+                                        <td>
+                                            <a class="issue-link">JIRAPLUGIN-194</a>
+                                        </td>
+                                        <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
+                                        <td>daniel.toth</td>
+                                        <td>Closed</td>
+                                        <td>03/Feb/16</td>
+                                        <td>Bugfix mindenen</td>
+                                        <td>daniel.toth</td>
+                                        <td>2h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JIRA plugin development</td>
+                                        <td>Bug</td>
+                                        <td>
+                                            <a class="issue-link">JIRAPLUGIN-194</a>
+                                        </td>
+                                        <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
+                                        <td>daniel.toth</td>
+                                        <td>Closed</td>
+                                        <td>03/Feb/16</td>
+                                        <td>Bugfix mindenen</td>
+                                        <td>daniel.toth</td>
+                                        <td>2h</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JIRA plugin development</td>
+                                        <td>Bug</td>
+                                        <td>
+                                            <a class="issue-link">JIRAPLUGIN-194</a>
+                                        </td>
+                                        <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
+                                        <td>daniel.toth</td>
+                                        <td>Closed</td>
+                                        <td>03/Feb/16</td>
+                                        <td>Bugfix mindenen</td>
+                                        <td>daniel.toth</td>
+                                        <td>2h</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="aui-group aui-group-split count-pagination">
+                            <div class="aui-item">
+                                <span class="results-count-text">
+                                    <span class="results-count results-count-start">1</span> –
+                                    <span class="results-count results-count-end">50</span> of 
+                                    <span class="results-count results-count-total results-count-link">100</span>
+                                </span>
+                            </div>
+                            <div class="aui-item">
+                                <div class="pagination" data-displayable-total="100"> 
+                                    <strong title="Issues 1 - 50">1</strong> 
+                                    <a href="/issues/?jql=&amp;startIndex=50" data-page="2" data-start-index="50" title="Issues 51 - 100">2</a>
+                                    <a href="/issues/?jql=&amp;startIndex=50" data-start-index="50" class="icon icon-next" title="Go to page 2 of 59">
+                                        <span class="aui-icon aui-icon-small aui-iconfont-arrows-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="summary-module" class="module jttp-reporting-summary-module toggle-wrap expanded">
+                    <div id="summary-module_heading" class="mod-header">
+                        <h2 class="toggle-title">Quick Summary</h2>
+                    </div>
+                    <div class="mod-content">
+                        <div class="jttp-reporting-summary-export-container jttp-reporting-action-button-container">
+                            <div class="jttp-reporting-summary-export">
+                                <button class="aui-button aui-button-subtle" id="detials-export">
+                                <span class="aui-icon aui-icon-small aui-iconfont-export"></span>
+                                    <span class="button-label">Export</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="aui-tabs horizontal-tabs" data-aui-responsive>
+                            <ul class="tabs-menu">
+                                <li class="menu-item active-tab">
+                                    <a href="#tabs-project">Project</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#tabs-issue">Issue</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#tabs-user">User</a>
+                                </li>
+                            </ul>
+                            <div class="tabs-pane active-pane" id="tabs-project">
+                                <table class="aui jttp-reporting-table">
+                                    <thead>
+                                        <tr>
+                                            <th id="summary-project-key">Project</th>
+                                            <th>Summary</th>
+                                            <th>Estimated</th>
+                                            <th>Total Logged</th>
+                                            <th>Remaining</th>
+                                            <th>Logged vs. Estimated</th>
+                                            <th>Expected Total (Logged + Remaining)</th>
+                                            <th>Expected Total vs. Estimated</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="summary-project-key">JIRA plugin development</td>
+                                            <td>Jiraplguin dev</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                        </tr>                                        
+                                    </tbody>
+                                </table>
+                                <div class="aui-group aui-group-split count-pagination">
+                                    <div class="aui-item">
+                                        <span class="results-count-text">
+                                            <span class="results-count results-count-start">1</span> –
+                                            <span class="results-count results-count-end">50</span> of 
+                                            <span class="results-count results-count-total results-count-link">100</span>
+                                        </span>
+                                    </div>
+                                    <div class="aui-item">
+                                        <div class="pagination" data-displayable-total="100"> 
+                                            <strong title="Issues 1 - 50">1</strong> 
+                                            <a href="/issues/?jql=&amp;startIndex=50" data-page="2" data-start-index="50" title="Issues 51 - 100">2</a>
+                                            <a href="/issues/?jql=&amp;startIndex=50" data-start-index="50" class="icon icon-next" title="Go to page 2 of 59">
+                                                <span class="aui-icon aui-icon-small aui-iconfont-arrows-right"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs-pane" id="tabs-issue">
+                                <table class="aui jttp-reporting-table">
+                                    <thead>
+                                        <tr>
+                                            <th id="summary-issue-key">Issue</th>
+                                            <th>Summary</th>
+                                            <th>Estimated</th>
+                                            <th>Remaining</th>
+                                            <th>Total Logged</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="summary-issue-key">JIRAPLUGIN-1</td>
+                                            <td>Jiraplguin dev</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="summary-issue-key">JIRAPLUGIN-2</td>
+                                            <td>Jiraplguin dev</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="summary-issue-key">JIRAPLUGIN-2</td>
+                                            <td>Jiraplguin dev</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                            <td>200</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="aui-group aui-group-split count-pagination">
+                                    <div class="aui-item">
+                                        <span class="results-count-text">
+                                            <span class="results-count results-count-start">1</span> –
+                                            <span class="results-count results-count-end">50</span> of 
+                                            <span class="results-count results-count-total results-count-link">100</span>
+                                        </span>
+                                    </div>
+                                    <div class="aui-item">
+                                        <div class="pagination" data-displayable-total="100"> 
+                                            <strong title="Issues 1 - 50">1</strong> 
+                                            <a href="/issues/?jql=&amp;startIndex=50" data-page="2" data-start-index="50" title="Issues 51 - 100">2</a>
+                                            <a href="/issues/?jql=&amp;startIndex=50" data-start-index="50" class="icon icon-next" title="Go to page 2 of 59">
+                                                <span class="aui-icon aui-icon-small aui-iconfont-arrows-right"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs-pane" id="tabs-user">
+                                <table class="aui jttp-reporting-table">
+                                    <thead>
+                                        <tr>
+                                            <th id="summary-user-key">Username</th>
+                                            <th>Total Logged</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="summary-user-key">Tóth Dániel</td>
+                                            <td>20</td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="summary-user-key">Bordás Attila</td>
+                                            <td>20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="aui-group aui-group-split count-pagination">
+                                    <div class="aui-item">
+                                        <span class="results-count-text">
+                                            <span class="results-count results-count-start">1</span> –
+                                            <span class="results-count results-count-end">50</span> of 
+                                            <span class="results-count results-count-total results-count-link">100</span>
+                                        </span>
+                                    </div>
+                                    <div class="aui-item">
+                                        <div class="pagination" data-displayable-total="100"> 
+                                            <strong title="Issues 1 - 50">1</strong> 
+                                            <a href="/issues/?jql=&amp;startIndex=50" data-page="2" data-start-index="50" title="Issues 51 - 100">2</a>
+                                            <a href="/issues/?jql=&amp;startIndex=50" data-start-index="50" class="icon icon-next" title="Go to page 2 of 59">
+                                                <span class="aui-icon aui-icon-small aui-iconfont-arrows-right"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>                        
+                    </div>    
+                </div>
+            </section>              
+          </div>
+        </div>          
+      </section>
+      <footer id="footer" role="contentinfo">
+        <section class="footer-body">
+          <ul>
+            <li>I &amp;hearts; AUI</li>
+          </ul>
+          <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
+        </section>
+      </footer>
+    </div>
+    </body>
+</html>
