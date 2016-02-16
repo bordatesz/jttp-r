@@ -5,3 +5,4 @@ TODO:
 - Add toogle for Deatils and Summary
 - Make extended search criteria buttons erasable
 - Make search criteria buttons fixed-width with content end "..."
+- Add grand total part
