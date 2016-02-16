@@ -42,6 +42,27 @@
     padding-bottom: 5px;
 }
 
+/* Custom features */
+.search-wrap.basic .search-container.filter {
+    display: none;
+}
+
+.search-wrap.filter .search-container.basic {
+    display: none;
+}
+
+.mod-header {
+    cursor: pointer;
+}
+
+.mod-header .aui-icon {
+    margin-right: 5px;
+}
+
+.mod-header .toggle-title {
+    display: inline-block;
+}
+
 
 /* Not my classes, all below from Atlassian AUI */
 
