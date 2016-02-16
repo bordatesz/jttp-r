@@ -160,7 +160,7 @@
                                                     <span class="aui-icon icon-date">Select a date</span>
                                                 </a>
                                         </div>
-                                        <button class="aui-button aui-button-primary">Create </button> <!-- Submit the search form -->
+                                        <button class="aui-button aui-button-primary">Create Report</button> <!-- Submit the search form -->
                                     </div>
                                 </div>                                    
                             </div>
@@ -195,20 +195,21 @@
                             <table class="aui jttp-reporting-table">
                                 <thead>
                                     <tr class="rowHeader">
+                                        <th>Date</th>
                                         <th id="details-project-key">Project</th>
                                         <th>Type</th>
-                                        <th>Key</th>
+                                        <th>Issue</th>
                                         <th>Summary</th>
                                         <th>Reporter</th>
-                                        <th>Status</th>
-                                        <th>Date</th>
+                                        <th>Status</th>                                        
                                         <th>Description</th>
                                         <th>User</th>
-                                        <th>Logged</th>
+                                        <th>Duration</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>03/Feb/16</td>
                                         <td headers="details-project-key">JIRA plugin development</td>
                                         <td>Bug</td>
                                         <td>
@@ -216,13 +217,13 @@
                                         </td>
                                         <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
                                         <td>daniel.toth</td>
-                                        <td>Closed</td>
-                                        <td>03/Feb/16</td>
+                                        <td>Closed</td>                                       
                                         <td>Bugfix mindenen</td>
                                         <td>daniel.toth</td>
                                         <td>2h</td>
                                     </tr>
                                     <tr>
+                                        <td>03/Feb/16</td>
                                         <td>JIRA plugin development</td>
                                         <td>Bug</td>
                                         <td>
@@ -230,13 +231,13 @@
                                         </td>
                                         <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
                                         <td>daniel.toth</td>
-                                        <td>Closed</td>
-                                        <td>03/Feb/16</td>
+                                        <td>Closed</td>                                        
                                         <td>Bugfix mindenen</td>
                                         <td>daniel.toth</td>
                                         <td>2h</td>
                                     </tr>
                                     <tr>
+                                        <td>03/Feb/16</td>
                                         <td>JIRA plugin development</td>
                                         <td>Bug</td>
                                         <td>
@@ -244,13 +245,13 @@
                                         </td>
                                         <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
                                         <td>daniel.toth</td>
-                                        <td>Closed</td>
-                                        <td>03/Feb/16</td>
+                                        <td>Closed</td>                                        
                                         <td>Bugfix mindenen</td>
                                         <td>daniel.toth</td>
                                         <td>2h</td>
                                     </tr>
                                     <tr>
+                                        <td>03/Feb/16</td>
                                         <td>JIRA plugin development</td>
                                         <td>Bug</td>
                                         <td>
@@ -258,13 +259,13 @@
                                         </td>
                                         <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
                                         <td>daniel.toth</td>
-                                        <td>Closed</td>
-                                        <td>03/Feb/16</td>
+                                        <td>Closed</td>                                        
                                         <td>Bugfix mindenen</td>
                                         <td>daniel.toth</td>
                                         <td>2h</td>
                                     </tr>
                                     <tr>
+                                        <td>03/Feb/16</td>
                                         <td>JIRA plugin development</td>
                                         <td>Bug</td>
                                         <td>
@@ -272,13 +273,13 @@
                                         </td>
                                         <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
                                         <td>daniel.toth</td>
-                                        <td>Closed</td>
-                                        <td>03/Feb/16</td>
+                                        <td>Closed</td>                                        
                                         <td>Bugfix mindenen</td>
                                         <td>daniel.toth</td>
                                         <td>2h</td>
                                     </tr>
                                     <tr>
+                                        <td>03/Feb/16</td>
                                         <td>JIRA plugin development</td>
                                         <td>Bug</td>
                                         <td>
@@ -286,8 +287,7 @@
                                         </td>
                                         <td>[JTTP] Reporting email - kérdés válaszok nélkül</td>
                                         <td>daniel.toth</td>
-                                        <td>Closed</td>
-                                        <td>03/Feb/16</td>
+                                        <td>Closed</td>                                        
                                         <td>Bugfix mindenen</td>
                                         <td>daniel.toth</td>
                                         <td>2h</td>
@@ -359,11 +359,11 @@
                                             <td headers="summary-project-key">JIRA plugin development</td>
                                             <td>Jiraplguin dev</td>
                                             <td>200</td>
+                                            <td>150</td>
+                                            <td>50</td>
+                                            <td>-50</td>
                                             <td>200</td>
-                                            <td>200</td>
-                                            <td>200</td>
-                                            <td>200</td>
-                                            <td>200</td>
+                                            <td>0</td>
                                         </tr>                                        
                                     </tbody>
                                 </table>
@@ -392,6 +392,10 @@
                                         <tr>
                                             <th id="summary-issue-key">Issue</th>
                                             <th>Summary</th>
+                                            <th>Type</th>
+                                            <th>Priority</th>
+                                            <th>Status</th>
+                                            <th>Assigne</th>
                                             <th>Estimated</th>
                                             <th>Remaining</th>
                                             <th>Total Logged</th>
@@ -401,6 +405,10 @@
                                         <tr>
                                             <td headers="summary-issue-key">JIRAPLUGIN-1</td>
                                             <td>Jiraplguin dev</td>
+                                            <td>Bug</td>
+                                            <td>Major</td>
+                                            <td>Open</td>
+                                            <td>daniel.toth</td>
                                             <td>200</td>
                                             <td>200</td>
                                             <td>200</td>
@@ -408,6 +416,10 @@
                                         <tr>
                                             <td headers="summary-issue-key">JIRAPLUGIN-2</td>
                                             <td>Jiraplguin dev</td>
+                                            <td>Bug</td>
+                                            <td>Major</td>
+                                            <td>Open</td>
+                                            <td>daniel.toth</td>
                                             <td>200</td>
                                             <td>200</td>
                                             <td>200</td>
@@ -415,6 +427,10 @@
                                         <tr>
                                             <td headers="summary-issue-key">JIRAPLUGIN-2</td>
                                             <td>Jiraplguin dev</td>
+                                            <td>Bug</td>
+                                            <td>Major</td>
+                                            <td>Open</td>
+                                            <td>daniel.toth</td>
                                             <td>200</td>
                                             <td>200</td>
                                             <td>200</td>
