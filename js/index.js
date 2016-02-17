@@ -1,8 +1,8 @@
 function toggleModContent(type) {
-    var module = $("#" + type + "Module");
-    var icon  = $(".mod-header .aui-icon", module);
+    var module = AJS.$("#" + type + "Module");
+    var icon  = AJS.$(".mod-header .aui-icon", module);
     
-    $(".mod-content", module).toggle(0, function() {
+    AJS.$(".mod-content", module).toggle(0, function() {
         module.toggleClass("collapsed");
         
         if(module.hasClass("collapsed")) {
@@ -15,8 +15,8 @@ function toggleModContent(type) {
 }
 
 function changeFilterType(type) {
-    var searchWrap = $(".search-wrap");
-    var formType = $("input[name=formType]");
+    var searchWrap = AJS.$(".search-wrap");
+    var formType = AJS.$("input[name=formType]");
     
     formType.attr("value", type);
     

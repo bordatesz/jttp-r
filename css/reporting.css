@@ -160,11 +160,34 @@
     display: inline
 }
 
+/* grand total */
+
+.grand-total-container {
+    display: table;
+    box-sizing: border-box;
+    border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.grand-total {
+    float:right;
+    border-top: 1px solid #ccc;
+}
+
+.grand-total-item {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1.42857142857143;
+    font-weight: bolder;    
+    padding: 7px 10px 7px 10px;
+}
 
 /* custom reporting classes */
 
 .reporting-search-criteria-container {
-    padding: 5px 20px 5px 20px;
+    padding: 5px 0px 5px 20px;
     border-top: 1px solid #ccc; 
 }
 
@@ -263,6 +286,7 @@
     margin-left: 0px;
 }
 
+
 /* // IF just plain old 'disabled' attribute
 
 .aui-button[disabled], .aui-button[disabled]:active, .aui-button[disabled]:focus, .aui-button[disabled]:hover {
@@ -275,5 +299,13 @@
 
 h2 {    
     margin: 10px 0 0;
+}
+
+p:first-child{
+    margin: 0;
+}
+
+p {
+    margin: 0;
 }
 
