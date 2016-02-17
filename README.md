@@ -1,8 +1,6 @@
 # jttp-r
 
 TODO:
-- Switch Basic and Filter div on button click
-- Add toogle for Deatils and Summary
-- Make extended search criteria buttons erasable
-- Make search criteria buttons fixed-width with content end "..."
+- Refactor toggle functions if needed
+- Fix Filter and Basic button float down in Firefox and Explorer
 - Add grand total part

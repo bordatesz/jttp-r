@@ -53,21 +53,32 @@
         </header>
             
         <!-- Search criterias -->
-        <div class="jttp-reporting-search-crit">
-            <form action="" class="aui top-label jttp-reporting-reporting-form" id="jttp-reporting-reporting-form" method="get">
+        <div class="reporting-search-criteria-container">
+            <form action="" class="aui top-label reporting-form" id="reporting-form" method="get">
 			     <div class="form-body">
                      <div class="aui-group">
                         <div class="aui-item search-wrap basic"> <!-- Search wrap class from issue search -->
                             <div class="search-container basic">                                
                                  <div class="search-criteria-container">
                                      <div class="search-criteria">
-                                         <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
+                                         <button type="button" data-id="group" aria-owns="dropdown2-checkbox-project" aria-haspopup="true" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="JIRA plugin development, DEMO 2, DEMO 3">
                                              <div class="criteria-wrap">
                                                  <div class="searcherValue">
-                                                     <span id="fieldpid" class="fieldValue">Project:</span> All
+                                                     <span id="fieldpid" class="fieldValue">JIRA plugin development, DEMO 2, DEMO 3</span>
                                                  </div>
                                              </div>
                                          </button>
+                                         <!-- Project Dropdown -->
+                                         <div id="dropdown2-checkbox-project" class="aui-dropdown2 aui-style-default">
+                                             <div class="aui-dropdown2-section">
+                                                 <ul>
+                                                     <li><a class="aui-dropdown2-checkbox checked interactive">JIRA plugin development</a></li>
+                                                     <li><a class="aui-dropdown2-checkbox checked interactive">DEMO 2</a></li>
+                                                     <li><a class="aui-dropdown2-checkbox checked interactive">DEMO 3</a></li>
+                                                 </ul>
+                                             </div>
+                                         </div>
+                                         <!-- Project Dropdown End-->
                                           <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
                                               <div class="criteria-wrap">
                                                   <div class="searcherValue">
@@ -89,31 +100,10 @@
                                                   </div>
                                               </div>
                                          </button>
-                                         <button type="button" class="aui-button aui-button-link" onclick="changeFilterType('filter')">Filter</button>  <!-- switch to jttp-reporting-search-crit-dynamic-filter -->
+                                         <button type="button" class="aui-button aui-button-link" onclick="changeFilterType('filter')">Filter</button>  <!-- switch to filter -->
                                      </div>
                                      <div class="search-criteria-extended">
-                                         <!-- placeholder for criterias with more button !!! -->
-                                         <div class="extended-button">
-                                             <button type="button" data-id="group" aria-owns="search-criteria-extended" aria-haspopup="true" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All">
-                                                  <div class="criteria-wrap">
-                                                      <div class="searcherValue">
-                                                          <span id="fieldpid" class="fieldValue">Reporter:</span> All
-                                                      </div>                                                  
-                                                  </div>
-                                                  <span class="aui-icon aui-icon-small aui-iconfont-remove"></span>
-                                             </button>
-                                         </div>
-                                         <!-- Dropdown -->
-                                        <div id="search-criteria-extended" class="aui-style-default aui-dropdown2">
-                                            <div class="aui-dropdown2-section">
-                                                <ul>
-                                                    <li><a href="#foo">Red Dwarf</a></li>
-                                                    <li><a href="#foo">Low Red Dwarf</a></li>
-                                                    <li><a href="#foo">High Red Dwarf</a></li>
-                                                    <li><a href="#foo">Nanobot Red Dwarf</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                         <!-- placeholder for criterias with more button !!! -->                                         
                                      </div>
                                  </div>                                    
                             </div>
@@ -127,7 +117,7 @@
                                                  </div>
                                              </div>
                                         </button>
-                                        <button type="button" class="aui-button aui-button-link" onclick="changeFilterType('basic')">Basic</button> <!-- switch to jttp-reporting-search-crit-dynamic-normal -->
+                                        <button type="button" class="aui-button aui-button-link" onclick="changeFilterType('basic')">Basic</button> <!-- switch to basic -->
                                     </div>
                                 </div>                                    
                             </div>                            
@@ -145,7 +135,7 @@
                                                 </div>
                                             </div>
                                         </button>
-                                         <button type="button" data-id="group" class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" title="All" disabled> <!-- only group or user can be picked, not both, one button will be disabled -->
+                                         <button type="button" data-id="group"  class="criteria-selector aui-button aui-button-subtle aui-dropdown2-trigger" aria-disabled="true" title="All"> <!-- only group or user can be picked, not both, one button will be disabled -->
                                              <div class="criteria-wrap">
                                                  <div class="searcherValue">
                                                      <span id="fieldpid" class="fieldValue">Users:</span> All
@@ -162,13 +152,13 @@
                             <div class="date-search-container">
                                 <div class="search-criteria-container">
                                     <div class="search-criteria">
-                                        <div class="from-date jttp-reporting-inline-calendar">
+                                        <div class="from-date inline-calendar">
                                             <input class="text medium-field datepicker-input" placeholder="From" type="text" value="">
                                                 <a href="#" title="Select a date">
                                                     <span class="aui-icon icon-date">Select a date</span>
                                                 </a>
                                         </div>
-                                        <div class="to-date jttp-reporting-inline-calendar">
+                                        <div class="to-date inline-calendar">
                                             <input class="text medium-field datepicker-input" placeholder="To" type="text" value="">
                                                 <a href="#" title="Select a date">
                                                     <span class="aui-icon icon-date">Select a date</span>
@@ -190,12 +180,12 @@
           <div class="aui-page-panel-inner">
             <section class="aui-page-panel-content">                
                 <div id="detailsModule" class="module toggle-wrap expanded">
-                    <div id="detailsModuleHeading" class="mod-header" onclick="toggleModContent('details')">
+                    <div id="detailsModuleHeading" class="mod-header">
                         <span class="aui-icon aui-icon-small aui-iconfont-expanded"></span>
-                        <h2 class="toggle-title">Work Log Details</h2>
+                        <h2 class="toggle-title"  onclick="toggleModContent('details')">Work Log Details</h2>
                     </div>
                     <div class="mod-content">
-                        <div class="aui-group aui-group-split jttp-reporting-action-button-container">
+                        <div class="aui-group aui-group-split action-button-container">
                             <div class="aui-item">
                                 <button class="aui-button aui-button-subtle aui-dropdown2-trigger" id="details-groupby">Group by</button>                        
                             </div>
@@ -207,8 +197,8 @@
                                 </button>
 							</div>								
                         </div>
-                        <div class="jttp-reporting-details-tale-container">
-                            <table class="aui jttp-reporting-table">
+                        <div class="details-tale-container">
+                            <table class="aui reporting-table">
                                 <thead>
                                     <tr class="rowHeader">
                                         <th>Date</th>
@@ -331,14 +321,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="summaryModule" class="module jttp-reporting-summary-module toggle-wrap expanded">
-                    <div id="summary-module_heading" class="mod-header"  onclick="toggleModContent('summary')">
+                <div id="summaryModule" class="module summary-module toggle-wrap expanded">
+                    <div id="summaryModuleHeading" class="mod-header">
                         <span class="aui-icon aui-icon-small aui-iconfont-expanded"></span>
-                        <h2 class="toggle-title">Quick Summary</h2>
+                        <h2 class="toggle-title" onclick="toggleModContent('summary')">Quick Summary</h2>
                     </div>
                     <div class="mod-content">
-                        <div class="jttp-reporting-summary-export-container jttp-reporting-action-button-container">
-                            <div class="jttp-reporting-summary-export">
+                        <div class="summary-export-container action-button-container">
+                            <div class="summary-export">
                                 <button class="aui-button aui-button-subtle" id="detials-export">
                                 <span class="aui-icon aui-icon-small aui-iconfont-export"></span>
                                     <span class="button-label">Export</span>
@@ -358,7 +348,7 @@
                                 </li>
                             </ul>
                             <div class="tabs-pane active-pane" id="tabs-project">
-                                <table class="aui jttp-reporting-table">
+                                <table class="aui reporting-table">
                                     <thead>
                                         <tr>
                                             <th id="summary-project-key">Project</th>
@@ -404,7 +394,7 @@
                                 </div>
                             </div>
                             <div class="tabs-pane" id="tabs-issue">
-                                <table class="aui jttp-reporting-table">
+                                <table class="aui reporting-table">
                                     <thead>
                                         <tr>
                                             <th id="summary-issue-key">Issue</th>
@@ -474,7 +464,7 @@
                                 </div>
                             </div>
                             <div class="tabs-pane" id="tabs-user">
-                                <table class="aui jttp-reporting-table">
+                                <table class="aui reporting-table">
                                     <thead>
                                         <tr>
                                             <th id="summary-user-key">Username</th>
